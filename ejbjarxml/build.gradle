@@ -1,0 +1,13 @@
+apply plugin: 'ear'
+
+def defaultEncoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    deploy project(path: ':ejb', configuration: 'archives')
+    deploy project(path: ':war', configuration: 'archives')
+}
